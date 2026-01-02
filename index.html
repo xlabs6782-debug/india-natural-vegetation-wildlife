@@ -1,71 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natural Vegetation and Wildlife - Geography Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #a8e6cf 0%, #dcedc8 100%);
+            background-attachment: fixed;
+            overflow-x: hidden;
         }
         header {
-            text-align: center;
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50 0%, #66bb6a 100%);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-in;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
         }
         nav {
-            background-color: #333;
+            background: rgba(51, 51, 51, 0.9);
             color: white;
-            padding: 10px;
-            margin-bottom: 20px;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
         }
         nav ul {
-            list-style-type: none;
-            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         nav ul li {
-            display: inline;
-            margin-right: 15px;
+            margin: 0 15px;
         }
         nav ul li a {
             color: white;
             text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        nav ul li a:hover {
+            background: #4CAF50;
+            transform: translateY(-2px);
         }
         section {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.8s ease-out;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
         h1, h2 {
             color: #4CAF50;
+            margin-bottom: 15px;
         }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            margin-top: 20px;
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
         }
         .chart-placeholder {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
             font-style: italic;
             color: #777;
+            border: 2px dashed #4CAF50;
+            margin: 20px 0;
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            position: relative;
+        }
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+        footer li {
+            margin: 0 10px;
+        }
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            nav ul { flex-direction: column; align-items: center; }
+            nav ul li { margin: 5px 0; }
+            section { padding: 20px; margin: 10px; }
+        }
+        @media (max-width: 480px) {
+            header { padding: 20px; }
+            nav ul li a { padding: 8px 12px; font-size: 0.9em; }
+            h2 { font-size: 1.5em; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Natural Vegetation and Wildlife</h1>
+        <h1><i class="fas fa-leaf"></i> Natural Vegetation and Wildlife</h1>
         <p><strong>Subject:</strong> Geography | <strong>Class:</strong> IX</p>
-        
     </header>
 
     <nav>
@@ -103,19 +193,19 @@
     </nav>
 
     <section id="acknowledgement">
-        <h2>Acknowledgement</h2>
+        <h2><i class="fas fa-heart"></i> Acknowledgement</h2>
         <p>I would like to express my sincere thanks to my Geography teacher for guiding us throughout this project. I am also thankful to my school for providing necessary resources. I thank my parents and friends for their support and cooperation in completing this project successfully.</p>
     </section>
 
     <section id="introduction">
-        <h2>Introduction</h2>
+        <h2><i class="fas fa-info-circle"></i> Introduction</h2>
         <p>Natural vegetation means plants that grow naturally without human help. These plants grow according to climate, soil, rainfall, and landforms. Wildlife includes animals, birds, reptiles, insects, and other living beings that depend on forests and natural areas for survival.</p>
         <p>India is rich in natural vegetation and wildlife because it has different climates such as hot, cold, wet, and dry regions. Forests and wildlife are very important because they provide oxygen, food, shelter, and maintain balance in nature. Without forests and wildlife, life on Earth would become very difficult.</p>
         <p>This project explains different types of natural vegetation and wildlife in India, their importance, problems faced by them, and ways to protect them.</p>
     </section>
 
     <section id="objectives">
-        <h2>Objectives of the Project</h2>
+        <h2><i class="fas fa-bullseye"></i> Objectives of the Project</h2>
         <ul>
             <li>To understand natural vegetation and wildlife</li>
             <li>To study different types of forests in India</li>
@@ -125,18 +215,18 @@
     </section>
 
     <section id="methodology">
-        <h2>Research Methodology</h2>
+        <h2><i class="fas fa-search"></i> Research Methodology</h2>
         <p>This project is prepared using different sources of information. The main source is the NCERT Geography textbook. Additional information was collected from reference books, educational websites, newspapers, and class notes. Discussions with teachers and group members also helped in understanding the topic clearly. The collected information is written in simple words for easy understanding.</p>
     </section>
 
     <section id="meaning-importance">
-        <h2>Natural Vegetation – Meaning and Importance</h2>
+        <h2><i class="fas fa-tree"></i> Natural Vegetation – Meaning and Importance</h2>
         <p>Natural vegetation includes forests, grasslands, and shrubs that grow naturally. Forests play a very important role in our life. They provide oxygen which is essential for breathing. Trees absorb carbon dioxide and reduce air pollution.</p>
         <p>Forests help in controlling climate and rainfall. They prevent soil erosion by holding the soil with their roots. Forests are also a source of food, wood, fuel, medicines, rubber, and other useful products. Many animals depend on forests for shelter and food.</p>
     </section>
 
     <section id="factors">
-        <h2>Factors Affecting Natural Vegetation</h2>
+        <h2><i class="fas fa-cogs"></i> Factors Affecting Natural Vegetation</h2>
         <p>The growth of natural vegetation depends on many factors:</p>
         <ol>
             <li>Climate: Hot and wet climate supports dense forests.</li>
@@ -149,7 +239,7 @@
     </section>
 
     <section id="types">
-        <h2>Types of Natural Vegetation in India</h2>
+        <h2><i class="fas fa-list"></i> Types of Natural Vegetation in India</h2>
         <p>India has five major types of natural vegetation based on climate and landforms:</p>
         <ol>
             <li>Tropical Evergreen Forests</li>
@@ -162,148 +252,79 @@
     </section>
 
     <section id="evergreen">
-        <h2>Tropical Evergreen Forests</h2>
+        <h2><i class="fas fa-leaf"></i> Tropical Evergreen Forests</h2>
         <p>These forests are found in areas with heavy rainfall. Trees remain green throughout the year. They are found in the Western Ghats and Andaman and Nicobar Islands. Important trees include ebony and mahogany.</p>
     </section>
 
     <section id="deciduous">
-        <h2>Tropical Deciduous Forests</h2>
+        <h2><i class="fas fa-tree"></i> Tropical Deciduous Forests</h2>
         <p>These are the most widespread forests in India. Trees shed leaves during the dry season. They are divided into moist and dry deciduous forests. Teak and sal are common trees.</p>
     </section>
 
     <section id="thorn">
-        <h2>Thorn Forests and Scrub Vegetation</h2>
+        <h2><i class="fas fa-cactus"></i> Thorn Forests and Scrub Vegetation</h2>
         <p>These forests grow in dry areas with low rainfall. Plants have long roots and thorns to reduce water loss. They are found in Rajasthan and Gujarat.</p>
     </section>
 
     <section id="montane">
-        <h2>Montane Forests</h2>
+        <h2><i class="fas fa-mountain"></i> Montane Forests</h2>
         <p>Montane forests are found in mountainous regions. Vegetation changes with altitude. Pine and deodar trees are common in these forests.</p>
     </section>
 
     <section id="mangrove">
-        <h2>Mangrove Forests</h2>
+        <h2><i class="fas fa-water"></i> Mangrove Forests</h2>
         <p>Mangrove forests grow in coastal regions and river deltas. They protect coastal areas from floods and soil erosion. Sundari trees are common mangroves.</p>
     </section>
 
     <section id="wildlife">
-        <h2>Wildlife of India</h2>
+        <h2><i class="fas fa-paw"></i> Wildlife of India</h2>
         <p>India is rich in wildlife. Animals like tiger, elephant, lion, and deer are found in forests. Birds like peacock and eagle are also common. Wildlife helps maintain the food chain.</p>
     </section>
 
     <section id="endangered">
-        <h2>Endangered Species of India</h2>
+        <h2><i class="fas fa-exclamation-triangle"></i> Endangered Species of India</h2>
         <p>Endangered species are animals that are at risk of extinction. Examples include tiger, one-horned rhinoceros, and Asiatic lion. Habitat loss and poaching are major reasons.</p>
     </section>
 
     <section id="parks">
-        <h2>National Parks and Wildlife Sanctuaries</h2>
+        <h2><i class="fas fa-map-marked-alt"></i> National Parks and Wildlife Sanctuaries</h2>
         <p>National parks and wildlife sanctuaries are protected areas. They help conserve wildlife. Examples include Jim Corbett National Park and Kaziranga National Park.</p>
     </section>
 
     <section id="threats">
-        <h2>Threats to Natural Vegetation and Wildlife</h2>
+        <h2><i class="fas fa-skull-crossbones"></i> Threats to Natural Vegetation and Wildlife</h2>
         <p>Major threats include deforestation, poaching, pollution, urbanization, and climate change. These activities reduce forest cover and endanger animals.</p>
     </section>
 
     <section id="research">
-        <h2>Research Work and Data Analysis</h2>
+        <h2><i class="fas fa-chart-line"></i> Research Work and Data Analysis</h2>
         <p>Data shows that forest cover is decreasing due to human activities. Wildlife population is also declining. Conservation is urgently needed.</p>
     </section>
 
     <section id="bar-chart">
-        <h2>Bar Chart and Explanation</h2>
+        <h2><i class="fas fa-chart-bar"></i> Bar Chart and Explanation</h2>
         <div class="chart-placeholder">[Bar Chart Placeholder: A bar chart showing forest area under different forest types is included. It shows that tropical deciduous forests cover the largest area in India.]</div>
     </section>
 
     <section id="pie-chart">
-        <h2>Pie Chart and Explanation</h2>
+        <h2><i class="fas fa-chart-pie"></i> Pie Chart and Explanation</h2>
         <div class="chart-placeholder">[Pie Chart Placeholder: A pie chart shows causes of forest loss such as deforestation, agriculture, and urbanization. Deforestation is the main cause.]</div>
     </section>
 
     <section id="observation">
-        <h2>Observation</h2>
+        <h2><i class="fas fa-eye"></i> Observation</h2>
         <p>During this study, it was observed that human activities are the main reason for forest loss. Awareness and strict laws are needed.</p>
     </section>
 
     <section id="conservation">
-        <h2>Conservation of Forests and Wildlife</h2>
+        <h2><i class="fas fa-shield-alt"></i> Conservation of Forests and Wildlife</h2>
         <p>Forests can be conserved by planting trees, preventing illegal cutting, and protecting wildlife habitats. Wildlife laws must be strictly followed.</p>
     </section>
 
     <section id="preservation">
-        <h2>Preservation in the Future</h2>
+        <h2><i class="fas fa-seedling"></i> Preservation in the Future</h2>
         <p>Future generations depend on forests. Sustainable development and eco-friendly practices are necessary to preserve nature.</p>
     </section>
 
     <section id="steps">
-        <h2>Major Steps to be Taken</h2>
-        <ul>
-            <li>Increase forest cover</li>
-            <li>Stop poaching</li>
-            <li>Spread environmental awareness</li>
-            <li>Enforce strict laws</li>
-        </ul>
-    </section>
-
-    <section id="implementation">
-        <h2>Implementation</h2>
-        <p>Government, schools, and citizens must work together. Tree plantation drives and awareness programs should be conducted regularly.</p>
-    </section>
-
-    <section id="role-government">
-        <h2>Role of Government</h2>
-        <p>The government has launched projects like Project Tiger and established national parks to protect wildlife.</p>
-    </section>
-
-    <section id="role-people">
-        <h2>Role of People and Students</h2>
-        <p>People should avoid wasting resources. Students can plant trees and spread awareness.</p>
-    </section>
-
-    <section id="conclusion">
-        <h2>Conclusion</h2>
-        <p>Natural vegetation and wildlife are priceless resources. Protecting them is our responsibility. Conservation today will ensure a safe future.</p>
-    </section>
-
-    <section id="reference">
-        <h2>Reference</h2>
-        <ul>
-            <li>NCERT Geography Textbook (Class IX)</li>
-            <li>School Notes</li>
-            <li>Educational Websites</li>
-        </ul>
-    </section>
-
-    <section id="bibliography">
-        <h2>Bibliography</h2>
-        <ol>
-            <li>NCERT – Contemporary India</li>
-            <li>Geography Reference Books</li>
-            <li>Environmental Magazines</li>
-        </ol>
-    </section>
-
-   <footer>
-    <p>Project Submitted By:</p>
-    <ul>
-        <li>Shrithan</li>
-        <li>Dheeraj</li>
-        <li>Rohan</li>
-        <li>Akshit</li>
-        <li>Mahesh</li>
-        <li>Chaitan</li>
-        <li>Shabir</li>
-        <li>Manith</li>
-        <li>Mayank</li>
-        <li>Akshay</li>
-    </ul>
-       <p> for any websites mail xlabs6782@gmail.com</p>
-    <p>&copy; Created By X-Labs 2026</p>
-</footer>
-
-
-</body> 
-
-</html>
 
